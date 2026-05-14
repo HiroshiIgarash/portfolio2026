@@ -1,5 +1,8 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
+import { type ShotData } from "./Shot";
+import { ShotsGallery } from "./ShotsGallery";
+
 const tagStyles = cva(
   "absolute -top-3.5 right-6 rotate-2 rounded border-2 border-ink px-3 py-1.5 font-mono text-[11px] font-bold tracking-[0.1em] text-white",
   {
@@ -29,6 +32,7 @@ type ProjectCardProps = Required<VariantProps<typeof tagStyles>> & {
   role?: string;
   highlight?: string;
   links?: readonly ProjectLink[];
+  shots?: readonly ShotData[];
   children: React.ReactNode;
 };
 
@@ -43,6 +47,7 @@ export function ProjectCard({
   role,
   highlight,
   links,
+  shots,
   children,
 }: ProjectCardProps) {
   return (
@@ -84,6 +89,8 @@ export function ProjectCard({
           ))}
         </ul>
       </header>
+
+      {shots && shots.length > 0 && <ShotsGallery shots={shots} />}
 
       <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-[1.5fr_1fr]">
         <div className="space-y-3.5 text-[14.5px] leading-[1.85] text-ink-soft [&_strong]:bg-highlight [&_strong]:px-1 [&_strong]:font-bold [&_strong]:text-ink [&_ul]:my-2 [&_ul]:list-none [&_ul>li]:relative [&_ul>li]:py-1 [&_ul>li]:pl-5 [&_ul>li]:text-[14px] [&_ul>li]:before:absolute [&_ul>li]:before:left-0 [&_ul>li]:before:font-bold [&_ul>li]:before:text-brand-orange [&_ul>li]:before:content-['→']">

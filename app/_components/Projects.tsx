@@ -1,5 +1,48 @@
 import { ProjectCard } from "./ProjectCard";
 import { SectionHeader } from "./SectionHeader";
+import { type ShotData } from "./Shot";
+
+const HOLO_SHOTS: readonly ShotData[] = [
+  {
+    src: "/projects/holo/01.png",
+    caption: "ホロライブコメント検索 · 検索結果（「かわいい」）",
+    url: "holo-comment.com",
+    fileLabel: "holo/01.png",
+  },
+  {
+    src: "/projects/holo/02.png",
+    caption: "ホロライブコメント検索 · 動画詳細",
+    url: "holo-comment.com",
+    fileLabel: "holo/02.png",
+  },
+  {
+    src: "/projects/holo/03.png",
+    caption: "ホロライブコメント検索 · チャット一覧",
+    url: "holo-comment.com",
+    fileLabel: "holo/03.png",
+  },
+];
+
+const KOREMINA_SHOTS: readonly ShotData[] = [
+  {
+    src: "/projects/koremina/01.png",
+    caption: "コレミナ · トップページ",
+    url: "koremina.vercel.app",
+    fileLabel: "koremina/01.png",
+  },
+  {
+    src: "/projects/koremina/02.png",
+    caption: "コレミナ · 動画一覧",
+    url: "koremina.vercel.app",
+    fileLabel: "koremina/02.png",
+  },
+  {
+    src: "/projects/koremina/03.png",
+    caption: "コレミナ · 投稿フォーム",
+    url: "koremina.vercel.app",
+    fileLabel: "koremina/03.png",
+  },
+];
 
 const PROJECTS_HEADER = {
   num: "03 /",
@@ -181,6 +224,7 @@ export function Projects() {
             titleHref="https://www.holo-comment.com/"
             subtitle="配信ライブチャットの横断検索サービス · Claude Codeと協働で1週間"
             meta={["個人開発 · 1 week", "公開・運用中"]}
+            shots={HOLO_SHOTS}
             techStack={[
               { text: "Next.js", hot: true },
               { text: "TypeScript", hot: true },
@@ -244,6 +288,7 @@ export function Projects() {
             titleHref="https://koremina.vercel.app/"
             subtitle="にじさんじ非公式・おすすめ動画共有サービス"
             meta={["個人開発 · 2 months", "1,400件超の投稿"]}
+            shots={KOREMINA_SHOTS}
             techStack={[
               { text: "Next.js", hot: true },
               { text: "TypeScript", hot: true },
