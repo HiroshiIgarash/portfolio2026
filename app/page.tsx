@@ -1,3 +1,4 @@
+import { Hero } from "./_components/Hero";
 import { Nav } from "./_components/Nav";
 
 export default function Home() {
@@ -5,6 +6,7 @@ export default function Home() {
     <>
       <Nav />
       <div id="top" />
+      <Hero />
     </>
   );
 }
