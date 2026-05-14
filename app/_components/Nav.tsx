@@ -12,10 +12,10 @@ export function Nav() {
       aria-label="Primary navigation"
       className="sticky top-0 z-50 border-b border-border bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/75"
     >
-      <div className="mx-auto flex max-w-[1120px] items-center justify-between gap-6 px-8 py-3.5 max-[900px]:px-5 max-[900px]:py-3">
+      <div className="mx-auto flex max-w-[1120px] items-center justify-between gap-6 px-5 py-3 md:px-8 md:py-3.5">
         <a
           href="#top"
-          className="font-hand text-[26px] font-bold leading-none tracking-tight text-ink max-[560px]:text-[22px]"
+          className="font-hand text-[22px] font-bold leading-none tracking-tight text-ink sm:text-[26px]"
         >
           Hiroshi.
         </a>
