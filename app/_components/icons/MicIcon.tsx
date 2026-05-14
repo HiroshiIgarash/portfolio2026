@@ -1,0 +1,77 @@
+export function MicIcon() {
+  return (
+    <svg viewBox="0 0 56 56" fill="none" className="size-full">
+      <rect
+        x="22"
+        y="6"
+        width="12"
+        height="22"
+        rx="6"
+        fill="var(--brand-purple)"
+        stroke="var(--ink)"
+        strokeWidth="2"
+      />
+      <line
+        x1="22"
+        y1="14"
+        x2="34"
+        y2="14"
+        stroke="var(--ink)"
+        strokeWidth="1.5"
+        opacity="0.5"
+      />
+      <line
+        x1="22"
+        y1="20"
+        x2="34"
+        y2="20"
+        stroke="var(--ink)"
+        strokeWidth="1.5"
+        opacity="0.5"
+      />
+      <path
+        d="M 14 26 Q 14 36, 28 36 Q 42 36, 42 26"
+        fill="none"
+        stroke="var(--ink)"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <line
+        x1="28"
+        y1="36"
+        x2="28"
+        y2="46"
+        stroke="var(--ink)"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <line
+        x1="22"
+        y1="46"
+        x2="34"
+        y2="46"
+        stroke="var(--ink)"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <circle cx="46" cy="14" r="3" fill="var(--brand-orange)" />
+      <line
+        x1="49"
+        y1="14"
+        x2="49"
+        y2="6"
+        stroke="var(--ink)"
+        strokeWidth="1.5"
+      />
+      <circle cx="8" cy="20" r="2.5" fill="var(--brand-amber)" />
+      <line
+        x1="10.5"
+        y1="20"
+        x2="10.5"
+        y2="12"
+        stroke="var(--ink)"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
