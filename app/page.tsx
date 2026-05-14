@@ -1,3 +1,4 @@
+import { About } from "./_components/About";
 import { Hero } from "./_components/Hero";
 import { Nav } from "./_components/Nav";
 
@@ -7,6 +8,7 @@ export default function Home() {
       <Nav />
       <div id="top" />
       <Hero />
+      <About />
     </>
   );
 }
