@@ -26,7 +26,7 @@ export function ProfileCard() {
         aria-hidden
         className="absolute -top-3.5 left-1/2 size-7 -translate-x-1/2 rounded-full border-2 border-ink bg-brand-orange shadow-[0_2px_0_rgba(0,0,0,0.15)]"
       />
-      <h3 className="mb-[18px] border-b border-dashed border-ink/40 pb-3 text-center font-hand text-3xl text-ink">
+      <h3 className="mb-[18px] border-b border-dashed border-ink/40 pb-3 text-center font-hand text-3xl font-bold text-ink">
         profile card
       </h3>
       <dl className="grid grid-cols-[100px_1fr] gap-x-4 gap-y-2.5 text-sm">
