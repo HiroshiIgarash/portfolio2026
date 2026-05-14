@@ -7,13 +7,15 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-nunito);
-  --font-mono: var(--font-jetbrains-mono);
-  --font-heading: var(--font-nunito);
-  --font-jp: var(--font-zen-kaku);
-  --font-hand: var(--font-caveat);
-  --font-hand-jp: var(--font-klee);
-  --font-hand-alt: var(--font-kalam);
+  --font-sans: var(--font-nunito), var(--font-noto-sans-jp), sans-serif;
+  --font-mono:
+    var(--font-jetbrains-mono), var(--font-noto-sans-jp), ui-monospace,
+    monospace;
+  --font-heading: var(--font-nunito), var(--font-noto-sans-jp), sans-serif;
+  --font-jp: var(--font-noto-sans-jp), sans-serif;
+  --font-hand: var(--font-caveat), var(--font-noto-sans-jp), cursive;
+  --font-hand-jp: var(--font-klee), var(--font-noto-sans-jp), cursive;
+  --font-hand-alt: var(--font-kalam), var(--font-noto-sans-jp), cursive;
 
   --color-paper: var(--paper);
   --color-paper-edge: var(--paper-edge);

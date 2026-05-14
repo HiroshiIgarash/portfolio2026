@@ -4,8 +4,8 @@ import {
   JetBrains_Mono,
   Kalam,
   Klee_One,
+  Noto_Sans_JP,
   Nunito,
-  Zen_Kaku_Gothic_New,
 } from "next/font/google";
 import "./globals.css";
 
@@ -16,10 +16,9 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const zenKaku = Zen_Kaku_Gothic_New({
-  subsets: ["latin"],
+const notoSansJP = Noto_Sans_JP({
   weight: ["400", "500", "700", "900"],
-  variable: "--font-zen-kaku",
+  variable: "--font-noto-sans-jp",
   display: "swap",
 });
 
@@ -53,7 +52,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 const fontVariables = [
   nunito.variable,
-  zenKaku.variable,
+  notoSansJP.variable,
   caveat.variable,
   kleeOne.variable,
   kalam.variable,
