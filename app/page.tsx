@@ -1,5 +1,7 @@
 import { About } from "./_components/About";
 import { Career } from "./_components/Career";
+import { Contact } from "./_components/Contact";
+import { Footer } from "./_components/Footer";
 import { Hero } from "./_components/Hero";
 import { Nav } from "./_components/Nav";
 import { Off } from "./_components/Off";
@@ -17,6 +19,8 @@ export default function Home() {
       <Projects />
       <Career />
       <Off />
+      <Contact />
+      <Footer />
     </>
   );
 }
