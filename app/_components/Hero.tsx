@@ -1,35 +1,70 @@
 import { Avatar } from "./Avatar";
 
+const HIROSHI = "Hiroshi";
+const IGARASHI = "Igarashi";
+const LETTER_STEP = 0.05;
+const TITLE_START_DELAY = 0.15;
+
+function SplitText({
+  text,
+  startDelay,
+}: {
+  text: string;
+  startDelay: number;
+}) {
+  return (
+    <>
+      {Array.from(text).map((char, index) => (
+        <span
+          key={`${char}-${index}`}
+          aria-hidden
+          className="inline-block animate-hero-letter-drop opacity-0"
+          style={{ animationDelay: `${startDelay + index * LETTER_STEP}s` }}
+        >
+          {char}
+        </span>
+      ))}
+    </>
+  );
+}
+
 export function Hero() {
+  const igarashiDelay = TITLE_START_DELAY + HIROSHI.length * LETTER_STEP;
+
   return (
     <section className="relative px-5 pb-10 pt-14 md:px-8 md:pb-14 md:pt-20">
       <div className="mx-auto grid w-full max-w-[1120px] grid-cols-1 items-center gap-8 md:grid-cols-[1.5fr_1fr] md:gap-14">
         <div className="order-1 min-w-0 md:order-none">
-          <span className="inline-block -rotate-2 bg-highlight px-[18px] py-2 font-hand text-xl text-ink shadow-[2px_3px_0_rgba(0,0,0,0.08)]">
+          <span className="inline-block animate-hero-tape-drop bg-highlight px-[18px] py-2 font-hand text-xl text-ink opacity-0 shadow-[2px_3px_0_rgba(0,0,0,0.08)]">
             Hello, I&apos;m a web engineer.
           </span>
 
-          <h1 className="mt-6 font-sans text-[clamp(44px,6.8vw,86px)] font-black leading-tight tracking-tight text-ink sm:whitespace-nowrap sm:leading-none">
-            Hiroshi{" "}
+          <h1
+            aria-label="Hiroshi Igarashi"
+            className="mt-6 font-sans text-[clamp(44px,6.8vw,86px)] font-black leading-tight tracking-tight text-ink sm:whitespace-nowrap sm:leading-none"
+          >
             <span className="relative inline-block">
-              Igarashi
+              <SplitText text={HIROSHI} startDelay={TITLE_START_DELAY} />{" "}
+              <SplitText text={IGARASHI} startDelay={igarashiDelay} />
               <svg
                 aria-hidden
-                viewBox="0 0 820 50"
+                viewBox="0 0 1400 50"
                 preserveAspectRatio="none"
-                className="pointer-events-none absolute -bottom-1.5 -left-[2%] h-[0.32em] w-[104%]"
+                className="pointer-events-none absolute -bottom-1.5 -left-[1%] h-[0.32em] w-[102%]"
               >
                 <path
-                  d="M 8 28 Q 60 18, 130 25 T 280 30 Q 380 22, 470 28 T 640 30 Q 720 25, 810 32"
+                  d="M 8 28 Q 120 18, 240 24 T 480 30 Q 620 22, 780 28 T 1060 30 Q 1200 25, 1390 32"
                   fill="none"
                   stroke="var(--brand-orange)"
                   strokeWidth="14"
                   strokeLinecap="round"
                   opacity="0.85"
+                  strokeDasharray="1400"
+                  strokeDashoffset="1400"
+                  className="animate-hero-underline-draw"
                 />
               </svg>
             </span>
-            <span className="text-brand-orange">.</span>
           </h1>
 
           <p className="mt-4 origin-left -rotate-[0.5deg] font-hand text-[clamp(24px,3vw,36px)] text-ink-soft sm:whitespace-nowrap">
