@@ -32,13 +32,13 @@ const KOREMINA_SHOTS: readonly ShotData[] = [
   },
   {
     src: "/projects/koremina/02.png",
-    caption: "コレミナ · 動画一覧",
+    caption: "コレミナ · 動画詳細",
     url: "koremina.vercel.app",
     fileLabel: "koremina/02.png",
   },
   {
     src: "/projects/koremina/03.png",
-    caption: "コレミナ · 投稿フォーム",
+    caption: "コレミナ · マイページ",
     url: "koremina.vercel.app",
     fileLabel: "koremina/03.png",
   },
@@ -294,6 +294,7 @@ export function Projects() {
               { text: "TypeScript", hot: true },
               { text: "Prisma" },
               { text: "Neon (PostgreSQL)" },
+              { text: "Auth.js" },
               { text: "shadcn/ui" },
               { text: "Vercel" },
             ]}
@@ -318,6 +319,10 @@ export function Projects() {
               初の本格的な個人プロダクトです。
             </p>
             <ul>
+              <li>
+                <strong>Auth.js (旧 NextAuth.js) でログイン機能を実装</strong>
+                。投稿・リアクション・ブックマーク・推しライバーの設定等のユーザー固有機能を構築。
+              </li>
               <li>
                 動画投稿、ライバーでの絞り込み、ワード検索、ランダム表示、リアクション機能、ブックマーク機能を実装。
               </li>
