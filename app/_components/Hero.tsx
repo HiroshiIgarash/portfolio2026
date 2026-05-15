@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section className="relative px-5 pb-10 pt-14 md:px-8 md:pb-14 md:pt-20">
       <div className="mx-auto grid w-full max-w-[1120px] grid-cols-1 items-center gap-8 md:grid-cols-[1.5fr_1fr] md:gap-14">
-        <div className="order-2 min-w-0 md:order-none">
+        <div className="order-1 min-w-0 md:order-none">
           <span className="inline-block -rotate-2 bg-highlight px-[18px] py-2 font-hand text-xl text-ink shadow-[2px_3px_0_rgba(0,0,0,0.08)]">
             Hello, I&apos;m a web engineer.
           </span>
@@ -73,7 +73,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="order-1 flex items-center justify-center md:order-none">
+        <div className="order-2 flex items-center justify-center md:order-none">
           <Avatar />
         </div>
       </div>

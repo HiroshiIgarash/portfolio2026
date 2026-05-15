@@ -41,7 +41,7 @@ const INFRA = {
   color: "purple",
   items: [
     { text: "AWS", primary: true },
-    { text: "Claude / Claude Code (業務でTDD運用)", primary: true },
+    { text: "Claude Code (業務でTDD運用)", primary: true },
     { text: "Vitest / Playwright / Storybook / Chromatic" },
     { text: "Contentful · next-intl (i18n)" },
     { text: "Vercel / Docker / Git / GitHub" },

@@ -19,8 +19,8 @@ export function About() {
         <SectionHeader {...ABOUT_HEADER} />
 
         <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-[1.4fr_1fr]">
-          <div className="space-y-[18px] leading-[1.9] text-ink-soft">
-            <p className="text-[17px]">
+          <div className="space-y-[18px] text-base leading-[1.9] text-ink-soft">
+            <p>
               東京を拠点に活動するWeb系エンジニアです。
               <strong className="bg-highlight px-1 font-bold text-ink">
                 最初のキャリアは塾講師
