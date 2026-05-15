@@ -56,9 +56,9 @@ export function Skills() {
         <SectionHeader {...SKILLS_HEADER} />
 
         <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <SkillGroup {...FRONTEND} />
-          <SkillGroup {...BACKEND} />
-          <SkillGroup {...INFRA} />
+          <SkillGroup {...FRONTEND} index={0} />
+          <SkillGroup {...BACKEND} index={1} />
+          <SkillGroup {...INFRA} index={2} />
         </div>
 
         <div className="relative -rotate-[0.3deg] rounded-lg border-[1.5px] border-dashed border-ink bg-highlight-teal px-[22px] py-[18px] font-hand text-[22px] leading-snug text-ink">

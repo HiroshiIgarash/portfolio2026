@@ -1,5 +1,8 @@
+"use client";
+
 import { cva, type VariantProps } from "class-variance-authority";
 
+import { useInView } from "../_hooks/useInView";
 import { type ShotData } from "./Shot";
 import { ShotsGallery } from "./ShotsGallery";
 
@@ -33,6 +36,7 @@ type ProjectCardProps = Required<VariantProps<typeof tagStyles>> & {
   highlight?: string;
   links?: readonly ProjectLink[];
   shots?: readonly ShotData[];
+  index?: number;
   children: React.ReactNode;
 };
 
@@ -48,10 +52,24 @@ export function ProjectCard({
   highlight,
   links,
   shots,
+  index = 0,
   children,
 }: ProjectCardProps) {
+  const { ref, inView } = useInView<HTMLElement>();
+  const isReverse = index % 2 === 1;
+  const initialTransform = isReverse
+    ? "translate-x-8 translate-y-5 rotate-2"
+    : "-translate-x-8 translate-y-5 -rotate-2";
+
   return (
-    <article className="relative rounded-lg border-2 border-ink bg-white p-7 shadow-[6px_6px_0_var(--ink)] md:p-8">
+    <article
+      ref={ref}
+      className={`relative rounded-lg border-2 border-ink bg-white p-7 shadow-[6px_6px_0_var(--ink)] transition-all duration-700 ease-[cubic-bezier(0.34,1.2,0.64,1)] md:p-8 ${
+        inView
+          ? "translate-x-0 translate-y-0 rotate-0 opacity-100"
+          : `opacity-0 ${initialTransform}`
+      }`}
+    >
       <span className={tagStyles({ variant })}>{tag}</span>
 
       <header className="mb-3 flex flex-wrap items-start justify-between gap-x-6 gap-y-2">

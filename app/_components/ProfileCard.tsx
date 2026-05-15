@@ -1,3 +1,7 @@
+"use client";
+
+import { useInView } from "../_hooks/useInView";
+
 const PROFILE = [
   {
     label: "Name",
@@ -20,8 +24,17 @@ const PROFILE = [
 ] as const;
 
 export function ProfileCard() {
+  const { ref, inView } = useInView<HTMLElement>();
+
   return (
-    <aside className="relative rotate-[0.8deg] rounded-md border-2 border-ink bg-white p-7 shadow-[6px_6px_0_var(--ink)]">
+    <aside
+      ref={ref}
+      className={`relative rounded-md border-2 border-ink bg-white p-7 shadow-[6px_6px_0_var(--ink)] transition-all duration-700 ease-[cubic-bezier(0.34,1.4,0.64,1)] ${
+        inView
+          ? "translate-y-0 rotate-[0.8deg] opacity-100"
+          : "translate-y-5 rotate-[8deg] opacity-0"
+      }`}
+    >
       <span
         aria-hidden
         className="absolute -top-3.5 left-1/2 size-7 -translate-x-1/2 rounded-full border-2 border-ink bg-brand-orange shadow-[0_2px_0_rgba(0,0,0,0.15)]"

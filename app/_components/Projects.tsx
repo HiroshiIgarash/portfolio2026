@@ -63,6 +63,7 @@ export function Projects() {
 
         <div className="grid gap-10">
           <ProjectCard
+            index={0}
             variant="work-current"
             tag="業務 · 2024-2026"
             title="タテマンガ投稿Webサービス · 開発と保守"
@@ -134,6 +135,7 @@ export function Projects() {
           </ProjectCard>
 
           <ProjectCard
+            index={1}
             variant="work-current"
             tag="業務 · 2025"
             title="在籍企業のコーポレートサイトリニューアル"
@@ -175,6 +177,7 @@ export function Projects() {
           </ProjectCard>
 
           <ProjectCard
+            index={2}
             variant="work-past"
             tag="業務 · 2022-2024"
             title="Web制作期 · コーポレートサイト多数"
@@ -218,6 +221,7 @@ export function Projects() {
           </ProjectCard>
 
           <ProjectCard
+            index={3}
             variant="personal"
             tag="個人開発 · 2026"
             title="ホロライブコメント検索"
@@ -282,6 +286,7 @@ export function Projects() {
           </ProjectCard>
 
           <ProjectCard
+            index={4}
             variant="personal"
             tag="個人開発 · 2024"
             title="コレミナ"

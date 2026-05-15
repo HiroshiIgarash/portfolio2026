@@ -23,6 +23,7 @@ export function Off() {
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <OffCard
+            index={0}
             label="— From"
             title="会津若松、出身です。"
             rotation="-rotate-1"
@@ -33,6 +34,7 @@ export function Off() {
           </OffCard>
 
           <OffCard
+            index={1}
             label="— Loving"
             title="にじさんじの沼、8年目。"
             rotation="rotate-[0.5deg]"
@@ -46,6 +48,7 @@ export function Off() {
           </OffCard>
 
           <OffCard
+            index={2}
             label="— Doing"
             title="遠くまで、歩く。"
             rotation="-rotate-[0.8deg]"
