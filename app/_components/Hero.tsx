@@ -76,11 +76,11 @@ export function Hero() {
 
           <p className="mt-7 max-w-[640px] text-base leading-[1.85] text-ink-soft">
             31歳、Web系エンジニア(フロントエンド + バックエンド)。
-            <strong className="bg-highlight px-1 font-bold text-ink">
+            <strong>
               Web制作で2年半、Web開発で1年半
             </strong>
             、合計約4年の経験があります。フロントエンドを中心に、業務では
-            <strong className="bg-highlight px-1 font-bold text-ink">
+            <strong>
               バックエンドも横断
             </strong>
             して開発してきました。インフラは個人開発で AWS を組んだ経験などがあり、業務でも機会があれば関わっていきたい領域です。

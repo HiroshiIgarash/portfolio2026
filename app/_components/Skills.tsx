@@ -65,7 +65,7 @@ export function Skills() {
           <span className="absolute -top-2.5 left-4 bg-paper px-2 font-mono text-[10px] font-bold tracking-[0.15em] text-ink">
             NOTE
           </span>
-          <strong className="bg-highlight px-1 font-bold">
+          <strong>
             フロントエンドとバックエンドの垣根を意識せず
           </strong>
           、機能を完成させるために、領域を選ばず取り組むスタンスです。

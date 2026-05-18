@@ -205,6 +205,22 @@ html {
     outline: 2px solid var(--brand-orange);
     outline-offset: 2px;
   }
+  section strong {
+    padding: 0 4px;
+    color: var(--ink);
+    font-weight: 700;
+    background-image: linear-gradient(
+      to right,
+      var(--highlight) 50%,
+      transparent 50%
+    );
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  section strong.lit {
+    background-position: 0 0;
+  }
 }
 
 @keyframes hero-tape-drop {

@@ -39,7 +39,7 @@ export function OffCard({
       <h3 className="mb-3 font-jp text-xl font-extrabold leading-[1.4] tracking-tight text-ink">
         {title}
       </h3>
-      <p className="text-sm leading-[1.75] text-ink-soft [&_strong]:bg-highlight [&_strong]:px-[3px] [&_strong]:font-bold [&_strong]:text-ink">
+      <p className="text-sm leading-[1.75] text-ink-soft">
         {children}
       </p>
     </div>

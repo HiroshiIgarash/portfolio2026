@@ -3,6 +3,7 @@ import { Career } from "./_components/Career";
 import { Contact } from "./_components/Contact";
 import { Footer } from "./_components/Footer";
 import { Hero } from "./_components/Hero";
+import { MarkerStrongs } from "./_components/MarkerStrongs";
 import { Nav } from "./_components/Nav";
 import { Off } from "./_components/Off";
 import { Projects } from "./_components/Projects";
@@ -21,6 +22,7 @@ export default function Home() {
       <Off />
       <Contact />
       <Footer />
+      <MarkerStrongs />
     </>
   );
 }
