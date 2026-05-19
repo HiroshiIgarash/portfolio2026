@@ -30,7 +30,7 @@ export function Off() {
             icon={<AizuIcon />}
           >
             福島県・<strong>会津若松</strong>
-            で生まれ育ちました。山と城下町と雪深い冬の記憶が、いまの自分のどこかにあります。
+            で生まれ育ちました。山に囲まれた盆地で、冬はとにかく寒いです。
           </OffCard>
 
           <OffCard
