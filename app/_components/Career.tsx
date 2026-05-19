@@ -1,3 +1,6 @@
+"use client";
+
+import { useInView } from "../_hooks/useInView";
 import { SectionHeader } from "./SectionHeader";
 
 const CAREER_HEADER = {
@@ -65,44 +68,84 @@ const CAREER_ITEMS: readonly CareerItem[] = [
   },
 ];
 
+const STEP_MS = 250;
+const CONTENT_OFFSET_MS = 150;
+const DOT_TRANSITION =
+  "opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease";
+const CONTENT_TRANSITION = "opacity 0.5s ease, transform 0.5s ease";
+
 export function Career() {
+  const { ref, inView } = useInView<HTMLOListElement>();
+
   return (
     <section id="career" className="relative px-5 py-10 md:px-8 md:py-14">
       <div className="mx-auto w-full max-w-[1120px]">
         <SectionHeader {...CAREER_HEADER} />
 
-        <ol className="relative pl-8 before:absolute before:bottom-2 before:left-2 before:top-2 before:w-0.5 before:bg-ink">
-          {CAREER_ITEMS.map((item, index) => (
-            <li
-              key={`${item.period}-${item.title}`}
-              className={`relative ${
-                index === CAREER_ITEMS.length - 1 ? "" : "pb-8"
-              }`}
-            >
-              <span
-                aria-hidden
-                className={`absolute -left-[30px] top-1.5 size-[18px] rounded-full border-[3px] border-ink ${
-                  item.current
-                    ? "bg-brand-orange shadow-[0_0_0_5px_rgba(255,107,53,0.2)]"
-                    : "bg-paper"
+        <ol ref={ref} className="relative pl-8">
+          <span
+            aria-hidden
+            className="absolute bottom-2 left-2 top-2 w-0.5 origin-top bg-ink"
+            style={{
+              transform: inView ? "scaleY(1)" : "scaleY(0)",
+              transition: "transform 1.4s cubic-bezier(0.65, 0, 0.35, 1)",
+            }}
+          />
+
+          {CAREER_ITEMS.map((item, index) => {
+            const dotDelay = `${index * STEP_MS}ms`;
+            const contentDelay = `${index * STEP_MS + CONTENT_OFFSET_MS}ms`;
+
+            return (
+              <li
+                key={`${item.period}-${item.title}`}
+                className={`relative ${
+                  index === CAREER_ITEMS.length - 1 ? "" : "pb-8"
                 }`}
-              />
-              <p className="mb-1 font-mono text-xs font-bold tracking-wider text-ink-dim">
-                {item.period}
-              </p>
-              <h3 className="mb-1.5 font-sans text-xl font-extrabold leading-snug text-ink">
-                {item.title}
-                {item.handNote && (
-                  <span className="ml-2 font-hand text-[22px] font-bold text-brand-orange">
-                    {item.handNote}
-                  </span>
-                )}
-              </h3>
-              <p className="whitespace-pre-line text-sm leading-[1.7] text-ink-soft">
-                {item.description}
-              </p>
-            </li>
-          ))}
+              >
+                <span
+                  aria-hidden
+                  className={`absolute -left-[30px] top-1.5 size-[18px] rounded-full border-[3px] border-ink ${
+                    item.current ? "bg-brand-orange" : "bg-paper"
+                  }`}
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? "scale(1)" : "scale(0.3)",
+                    boxShadow:
+                      item.current && inView
+                        ? "0 0 0 5px rgba(255, 107, 53, 0.2)"
+                        : "none",
+                    transition: DOT_TRANSITION,
+                    transitionDelay: dotDelay,
+                  }}
+                />
+
+                <div
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? "translateX(0)" : "translateX(-12px)",
+                    transition: CONTENT_TRANSITION,
+                    transitionDelay: contentDelay,
+                  }}
+                >
+                  <p className="mb-1 font-mono text-xs font-bold tracking-wider text-ink-dim">
+                    {item.period}
+                  </p>
+                  <h3 className="mb-1.5 font-sans text-xl font-extrabold leading-snug text-ink">
+                    {item.title}
+                    {item.handNote && (
+                      <span className="ml-2 font-hand text-[22px] font-bold text-brand-orange">
+                        {item.handNote}
+                      </span>
+                    )}
+                  </h3>
+                  <p className="whitespace-pre-line text-sm leading-[1.7] text-ink-soft">
+                    {item.description}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </div>
     </section>
